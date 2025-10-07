@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="mt-10 max-w-md mx-auto rounded-2xl border border-[#d4c8b5] bg-white p-6">
+  <h2 class="font-serif text-2xl">Admin Login</h2>
+  <form class="mt-4 space-y-3" method="post">
+    <div>
+      <label class="block text-sm mb-1">Email</label>
+      <input name="email" type="email" required class="w-full rounded-lg border border-[#d4c8b5] bg-[#f9f6f0] px-3 py-2" />
+    </div>
+    <div>
+      <label class="block text-sm mb-1">Password</label>
+      <input name="password" type="password" required class="w-full rounded-lg border border-[#d4c8b5] bg-[#f9f6f0] px-3 py-2" />
+    </div>
+    <div class="flex gap-2">
+      <button class="px-5 py-2 rounded-lg border border-[#b8a88b] bg-[#e9e2d6] hover:bg-[#e2d8c7] transition font-serif" type="submit">
+        Sign In
+      </button>
+      <a href="{{ url_for('home') }}" class="px-5 py-2 rounded-lg border border-[#d4c8b5] bg-white hover:bg-[#fffefd] transition font-serif">
+        Cancel
+      </a>
+    </div>
+  </form>
+</section>
+{% endblock %}

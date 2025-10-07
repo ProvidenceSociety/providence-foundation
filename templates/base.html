@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+/>
+  <title>{{ ORG_NAME }}</title>
+  <!-- Tailwind via CDN (no Node needed) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="min-h-screen bg-[#f7f4ee] text-[#1b1b1b]">
+  <!-- Top ornament -->
+  <div class="w-full bg-[#e9e2d6]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="h-2 bg-gradient-to-r from-[#b8a88b] via-[#e9e2d6] to-[#b8a88b]"></div>
+    </div>
+  </div>
+
+  <header class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-4">
+    <div class="flex items-center gap-4">
+      <img src="{{ url_for('static', filename='logo.png') }}"
+           class="h-14 w-14 object-contain rounded"
+           alt="Logo"
+           onerror="this.style.display='none'">
+      <div>
+        <h1 class="font-serif text-2xl sm:text-3xl tracking-wide">{{ ORG_NAME }}</h1>
+        <p class="text-sm italic text-neutral-700">
+          Transforming education, redeeming time, and reframing technology for the next generation.
+        </p>
+      </div>
+    </div>
+
+    <nav class="mt-6">
+      <ul class="flex flex-wrap gap-2 sm:gap-3">
+        <li><a href="{{ url_for('home') }}" class="px-4 py-2 rounded-full border bg-white/70 hover:bg-white border-[#d4c8b5] font-serif">Home</a></li>
+        <li><a href="{{ url_for('about') }}" class="px-4 py-2 rounded-full border bg-white/70 hover:bg-white border-[#d4c8b5] font-serif">About</a></li>
+        <li><a href="{{ url_for('projects') }}" class="px-4 py-2 rounded-full border bg-white/70 hover:bg-white border-[#d4c8b5] font-serif">Projects & Donate</a></li>
+        <li><a href="{{ url_for('team') }}" class="px-4 py-2 rounded-full border bg-white/70 hover:bg-white border-[#d4c8b5] font-serif">Team</a></li>
+        <li><a href="{{ url_for('contact') }}" class="px-4 py-2 rounded-full border bg-white/70 hover:bg-white border-[#d4c8b5] font-serif">Contact</a></li>
+        <li><a href="{{ url_for('dashboard') }}" class="px-4 py-2 rounded-full border bg-white/70 hover:bg-white border-[#d4c8b5] font-serif">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="mt-4 space-y-2">
+          {% for category, msg in messages %}
+            <div class="rounded-lg px-4 py-3 border
+                        {{ 'border-emerald-300 bg-emerald-50' if category=='success' else 'border-rose-300 bg-rose-50' }}">
+              {{ msg }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="border-t border-[#e2d8c7] mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div>
+        <div class="font-serif">{{ ORG_NAME }}</div>
+        <div class="text-sm text-neutral-600">© <script>document.write(new Date().getFullYear())</script> All rights reserved.</div>
+      </div>
+      <div class="flex gap-3 text-sm underline">
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('projects') }}">Projects</a>
+        <a href="{{ url_for('team') }}">Team</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

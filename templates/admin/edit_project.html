@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="mt-6 max-w-2xl">
+  <a href="{{ url_for('admin_home') }}" class="text-sm underline">&larr; Back to Admin</a>
+  <h2 class="font-serif text-2xl mt-2">Edit Project</h2>
+
+  <form class="mt-4 space-y-4" method="post">
+    <div>
+      <label class="block text-sm mb-1">Title</label>
+      <input name="title" value="{{ project.title }}" class="w-full rounded-lg border border-[#d4c8b5] bg-[#f9f6f0] px-3 py-2" />
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label class="block text-sm mb-1">Target (USD)</label>
+        <input name="target" type="number" min="0" value="{{ project.target }}"
+               class="w-full rounded-lg border border-[#d4c8b5] bg-[#f9f6f0] px-3 py-2" />
+      </div>
+      <div>
+        <label class="block text-sm mb-1">Raised (USD)</label>
+        <input name="raised" type="number" min="0" value="{{ project.raised }}"
+               class="w-full rounded-lg border border-[#d4c8b5] bg-[#f9f6f0] px-3 py-2" />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label class="block text-sm mb-1">Donation Link (by key)</label>
+        <select name="donation_key" class="w-full rounded-lg border border-[#d4c8b5] bg-[#f9f6f0] px-3 py-2">
+          <option value="">(leave unchanged)</option>
+          {% for k in donation_keys %}
+            <option value="{{ k }}" {% if project.donation_key == k %}selected{% endif %}>{{ k }}</option>
+          {% endfor %}
+        </select>
+        <p class="text-xs text-neutral-600 mt-1">Current resolved URL: <span class="break-all underline">{{ donate_url }}</span></p>
+      </div>
+      <div>
+        <label class="block text-sm mb-1">Or Custom Donation URL</label>
+        <input name="donation_url" placeholder="https://..." value="{{ project.donation_url or '' }}"
+               class="w-full rounded-lg border border-[#d4c8b5] bg-[#f9f6f0] px-3 py-2" />
+        <p class="text-xs text-neutral-600 mt-1">If set, this overrides the key-based link.</p>
+      </div>
+    </div>
+
+    <div class="flex gap-2">
+      <button class="px-5 py-2 rounded-lg border border-[#b8a88b] bg-[#e9e2d6] hover:bg-[#e2d8c7] transition font-serif" type="submit">
+        Save Changes
+      </button>
+      <a href="{{ url_for('admin_home') }}" class="px-5 py-2 rounded-lg border border-[#d4c8b5] bg-white hover:bg-[#fffefd] transition font-serif">
+        Cancel
+      </a>
+    </div>
+  </form>
+</section>
+{% endblock %}

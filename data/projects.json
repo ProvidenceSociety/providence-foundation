@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "ai-education",
+    "title": "Personalized Education with AI",
+    "target": 50000,
+    "raised": 18250,
+    "donation_key": "pilots"
+  },
+  {
+    "slug": "teacher-formation",
+    "title": "Teacher Formation & Time Redemption",
+    "target": 30000,
+    "raised": 8200,
+    "donation_key": "teachers"
+  },
+  {
+    "slug": "houses-nicaragua",
+    "title": "Houses for Teachers in Nicaragua",
+    "target": 120000,
+    "raised": 35500,
+    "donation_key": "houses"
+  },
+  {
+    "slug": "fifth-century",
+    "title": "5th Century Education",
+    "target": 40000,
+    "raised": 6100,
+    "donation_key": "fifth"
+  }
+]
