@@ -1,22 +1,102 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="prose prose-neutral max-w-none mt-6">
-  <h2 class="font-serif">Who We Are</h2>
-  <p>
-    Providence Foundation is a Christian nonprofit dedicated to renewing education—uniting classical wisdom with carefully designed technology. We exist to help families, churches, schools, and educators cultivate disciplined minds, virtuous character, and lifelong love of learning.
+
+<!-- Hero -->
+<section class="mt-6 rounded-2xl border border-[#d4c8b5] bg-white p-6 md:p-8 relative overflow-hidden">
+  <div class="absolute -top-6 -right-6 opacity-10 pointer-events-none hidden sm:block">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="" class="w-40 h-40 object-contain">
+  </div>
+  <h2 class="font-serif text-2xl md:text-3xl">Who We Are</h2>
+  <p class="mt-3 max-w-3xl text-neutral-700">
+    Providence Foundation is a Christian nonprofit dedicated to renewing education—uniting classical wisdom with
+    carefully designed technology. We exist to help families, churches, schools, and educators cultivate disciplined
+    minds, virtuous character, and a lifelong love of learning.
   </p>
-
-  <h3 class="font-serif">What We Do</h3>
-  <ul>
-    <li><strong>Curriculum & Pilots:</strong> Support classical and faith-aligned learning pilots that combine rigorous content with modern delivery.</li>
-    <li><strong>Teacher Formation:</strong> Provide training, grants, and resources that redeem time and equip teachers to flourish.</li>
-    <li><strong>Student Access:</strong> Fund scholarships and local initiatives that open doors for underserved learners.</li>
-    <li><strong>Responsible Innovation:</strong> Partner with trustworthy builders to ensure technology serves human formation—not the other way around.</li>
-  </ul>
-
-  <blockquote>
-    “Religion, morality, and knowledge being necessary to good government and the happiness of mankind, schools and the means of education shall forever be encouraged.”
-  </blockquote>
-  <p class="text-sm text-neutral-600 italic">— A guiding ideal from America’s early tradition, consonant with our mission.</p>
 </section>
+
+<!-- Two-column overview -->
+<section class="mt-6 grid md:grid-cols-3 gap-6">
+  <div class="md:col-span-2 rounded-2xl border border-[#d4c8b5] bg-white p-6">
+    <h3 class="font-serif text-xl">What We Do</h3>
+    <ul class="mt-3 space-y-3 text-neutral-800">
+      <li class="flex gap-3">
+        <div class="shrink-0 mt-1 h-2 w-2 rounded-full bg-[#b8a88b]"></div>
+        <p><span class="font-semibold">Curriculum &amp; Pilots:</span> Support classical and faith-aligned learning pilots that combine rigorous content with modern delivery.</p>
+      </li>
+      <li class="flex gap-3">
+        <div class="shrink-0 mt-1 h-2 w-2 rounded-full bg-[#b8a88b]"></div>
+        <p><span class="font-semibold">Teacher Formation:</span> Provide training, grants, and resources that redeem time and equip teachers to flourish.</p>
+      </li>
+      <li class="flex gap-3">
+        <div class="shrink-0 mt-1 h-2 w-2 rounded-full bg-[#b8a88b]"></div>
+        <p><span class="font-semibold">Student Access:</span> Fund scholarships and local initiatives that open doors for underserved learners.</p>
+      </li>
+      <li class="flex gap-3">
+        <div class="shrink-0 mt-1 h-2 w-2 rounded-full bg-[#b8a88b]"></div>
+        <p><span class="font-semibold">Responsible Innovation:</span> Partner with trustworthy builders to ensure technology serves human formation—not the other way around.</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Side card -->
+  <aside class="rounded-2xl border border-[#d4c8b5] bg-[#f9f6f0] p-6">
+    <h4 class="font-serif text-lg">Our Aim</h4>
+    <p class="mt-2 text-neutral-700">
+      Transforming education, redeeming time, and reframing technology for the next generation—to the glory of God
+      and the good of neighbors.
+    </p>
+    <div class="mt-4 h-px bg-gradient-to-r from-transparent via-[#d4c8b5] to-transparent"></div>
+    <p class="mt-4 text-sm text-neutral-600">
+      EIN: {{ EIN }} • Contact: <a class="underline" href="mailto:{{ ORG_EMAIL }}">{{ ORG_EMAIL }}</a>
+    </p>
+  </aside>
+</section>
+
+<!-- Pillars -->
+<section class="mt-6">
+  <h3 class="font-serif text-xl">Our Pillars</h3>
+  <div class="mt-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="rounded-xl border border-[#e2d8c7] bg-white p-4">
+      <div class="font-serif">Truth</div>
+      <p class="text-sm mt-1 text-neutral-700">Classical, Christ-centered content that forms the mind to love what is true.</p>
+    </div>
+    <div class="rounded-xl border border-[#e2d8c7] bg-white p-4">
+      <div class="font-serif">Virtue</div>
+      <p class="text-sm mt-1 text-neutral-700">Habits and practices that shape character, not just performance.</p>
+    </div>
+    <div class="rounded-xl border border-[#e2d8c7] bg-white p-4">
+      <div class="font-serif">Wisdom</div>
+      <p class="text-sm mt-1 text-neutral-700">Teaching to discern, judge, and act in the fear of the Lord.</p>
+    </div>
+    <div class="rounded-xl border border-[#e2d8c7] bg-white p-4">
+      <div class="font-serif">Stewardship</div>
+      <p class="text-sm mt-1 text-neutral-700">Tools that redeem time and keep technology in its proper place.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="mt-8">
+  <div class="rounded-2xl border border-[#d4c8b5] bg-white p-6">
+    <div class="italic text-neutral-800 leading-relaxed">
+      “Religion, morality, and knowledge being necessary to good government and the happiness of mankind,
+      schools and the means of education shall forever be encouraged.”
+    </div>
+    <div class="mt-2 text-sm text-neutral-600">— A guiding ideal from America’s early tradition, consonant with our mission.</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="mt-8 rounded-2xl border border-[#d4c8b5] bg-[#e9e2d6] p-6 md:flex md:items-center md:justify-between">
+  <div>
+    <h4 class="font-serif text-lg">Partner with Providence Foundation</h4>
+    <p class="text-neutral-700 mt-1">Your gifts and prayers advance pilots, teacher formation, and student access.</p>
+  </div>
+  <div class="mt-4 md:mt-0 flex gap-2">
+    <a href="{{ url_for('projects') }}" class="px-5 py-2 rounded-lg border border-[#d4c8b5] bg-white hover:bg-[#fffefd] transition font-serif">Projects</a>
+    <a href="{{ url_for('contact') }}" class="px-5 py-2 rounded-lg border border-[#b8a88b] bg-[#f4ead8] hover:bg-[#efe0c7] transition font-serif">Contact Us</a>
+  </div>
+</section>
+
 {% endblock %}
+

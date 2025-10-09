@@ -1,43 +1,125 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="relative overflow-hidden rounded-2xl border border-[#d4c8b5] bg-white">
-  <div class="p-8 sm:p-12">
-    <h2 class="font-serif text-3xl sm:text-4xl leading-tight">
+
+<!-- HERO with four faint watermark crests -->
+<section class="relative overflow-hidden rounded-2xl border border-[#d4c8b5] bg-gradient-to-b from-[#fffdfa] to-[#f9f6f0]">
+  <!-- watermark set -->
+  <img src="{{ url_for('static', filename='logo.png') }}"
+       alt="" aria-hidden="true"
+       class="absolute -top-10 -left-10 opacity-[0.06] rotate-[12deg] h-36 w-36 pointer-events-none select-none">
+  <img src="{{ url_for('static', filename='logo.png') }}"
+       alt="" aria-hidden="true"
+       class="absolute top-0 -right-16 opacity-[0.05] rotate-[-10deg] h-44 w-44 pointer-events-none select-none hidden sm:block">
+  <img src="{{ url_for('static', filename='logo.png') }}"
+       alt="" aria-hidden="true"
+       class="absolute -bottom-10 left-1/4 opacity-[0.04] rotate-[18deg] h-40 w-40 pointer-events-none select-none hidden md:block">
+  <img src="{{ url_for('static', filename='logo.png') }}"
+       alt="" aria-hidden="true"
+       class="absolute -bottom-12 right-10 opacity-[0.06] rotate-[-8deg] h-44 w-44 pointer-events-none select-none hidden sm:block">
+
+  <div class="relative p-8 sm:p-12">
+    <h2 class="font-serif text-3xl sm:text-4xl leading-tight tracking-wide relative z-10">
       Redeeming Time. Forming Souls. Renewing Education.
     </h2>
-    <p class="mt-3 max-w-2xl text-neutral-700">
+    <p class="mt-3 max-w-2xl text-neutral-700 relative z-10">
       We pair classical formation with careful innovation so that technology serves human flourishing—at home, in churches, and in schools.
     </p>
-    <div class="mt-6 flex flex-wrap gap-3">
-      <a href="{{ url_for('projects') }}" class="px-6 py-3 rounded-lg border border-[#b8a88b] bg-[#e9e2d6] hover:bg-[#e2d8c7] transition font-serif">
+
+    <div class="mt-6 flex flex-wrap gap-3 relative z-10">
+      <a href="{{ url_for('projects') }}"
+         class="px-6 py-3 rounded-lg border border-[#b8a88b] bg-[#e9e2d6] hover:bg-[#e2d8c7] transition font-serif">
         Donate Now
       </a>
-      <a href="{{ url_for('about') }}" class="px-6 py-3 rounded-lg border border-[#d4c8b5] bg-white hover:bg-[#fffefd] transition font-serif">
+      <a href="{{ url_for('about') }}"
+         class="px-6 py-3 rounded-lg border border-[#d4c8b5] bg-white hover:bg-[#fffefd] transition font-serif">
         Learn More
       </a>
     </div>
+
+    <!-- slim stats (optional) -->
+    <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center relative z-10">
+      <div class="rounded-xl border border-[#e6dccd] bg-white/70 p-3">
+        <div class="font-serif text-xl">4</div>
+        <div class="text-xs tracking-wide text-neutral-600">Active Projects</div>
+      </div>
+      <div class="rounded-xl border border-[#e6dccd] bg-white/70 p-3">
+        <div class="font-serif text-xl">$4M</div>
+        <div class="text-xs tracking-wide text-neutral-600">Goal This Year</div>
+      </div>
+      <div class="rounded-xl border border-[#e6dccd] bg-white/70 p-3">
+        <div class="font-serif text-xl">$20</div>
+        <div class="text-xs tracking-wide text-neutral-600">Amount Raised This Year</div>
+      </div>
+      <div class="rounded-xl border border-[#e6dccd] bg-white/70 p-3">
+        <div class="font-serif text-xl">1</div>
+        <div class="text-xs tracking-wide text-neutral-600">Objectives Completed This Year</div>
+      </div>
+    </div>
   </div>
-  <div class="px-8 sm:px-12 pb-6">
-    <div class="h-8 flex items-center" aria-hidden>
+
+  <!-- ornament divider -->
+  <div class="relative px-8 sm:px-12 pb-6 z-10">
+    <div class="h-8 flex items-center" aria-hidden="true">
       <div class="flex-1 border-t border-[#e6dccd]"></div>
-      <div class="mx-4 text-[#b8a88b]">❦</div>
+      <div class="mx-4 text-[#b8a88b] text-xl">❧</div>
       <div class="flex-1 border-t border-[#e6dccd]"></div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="grid md:grid-cols-3 gap-6 mt-10">
-  <div class="rounded-2xl border border-[#d4c8b5] bg-white p-6">
-    <h3 class="font-serif text-xl">Biblical Vision</h3>
-    <p class="mt-2 text-neutral-700">We believe education is essential to the advance of the Kingdom of God. We pursue wisdom, virtue, and knowledge—shaping the next generation to love truth and serve their communities.</p>
+<!-- PILLARS / VALUE CARDS -->
+<section class="grid md:grid-cols-3 gap-6 mt-10">
+  <article class="rounded-2xl border border-[#d4c8b5] bg-white p-6 shadow-[0_2px_0_#e5dccb] hover:shadow-[0_6px_0_#e5dccb] transition">
+    <div class="flex items-center gap-3">
+      <span class="h-6 w-6 rounded-full bg-[#e9e2d6] border border-[#d4c8b5] grid place-content-center font-serif">I</span>
+      <h3 class="font-serif text-xl">Biblical Vision</h3>
+    </div>
+    <p class="mt-2 text-neutral-700">
+      We believe education is essential to the advance of the Kingdom of God. We pursue wisdom, virtue, and knowledge—shaping the next generation to love truth and serve their communities.
+    </p>
+  </article>
+
+  <article class="rounded-2xl border border-[#d4c8b5] bg-white p-6 shadow-[0_2px_0_#e5dccb] hover:shadow-[0_6px_0_#e5dccb] transition">
+    <div class="flex items-center gap-3">
+      <span class="h-6 w-6 rounded-full bg-[#e9e2d6] border border-[#d4c8b5] grid place-content-center font-serif">II</span>
+      <h3 class="font-serif text-xl">Redemptive Technology</h3>
+    </div>
+    <p class="mt-2 text-neutral-700">
+      We reframe technology as a servant, not a master—redeeming time for families and educators through thoughtful tools and classical principles.
+    </p>
+  </article>
+
+  <article class="rounded-2xl border border-[#d4c8b5] bg-white p-6 shadow-[0_2px_0_#e5dccb] hover:shadow-[0_6px_0_#e5dccb] transition">
+    <div class="flex items-center gap-3">
+      <span class="h-6 w-6 rounded-full bg-[#e9e2d6] border border-[#d4c8b5] grid place-content-center font-serif">III</span>
+      <h3 class="font-serif text-xl">Impact in Practice</h3>
+    </div>
+    <p class="mt-2 text-neutral-700">
+      From curriculum pilots to teacher support and student scholarships, we channel generosity into tangible programs that change lives.
+    </p>
+  </article>
+</section>
+
+<!-- QUOTE STRIP -->
+<section class="mt-10 rounded-2xl border border-[#d4c8b5] bg-white p-6 md:p-8">
+  <p class="italic text-neutral-800 leading-relaxed">
+    “Religion, morality, and knowledge being necessary to good government and the happiness of mankind,
+    schools and the means of education shall forever be encouraged.”
+  </p>
+  <p class="mt-2 text-sm text-neutral-600">A guiding ideal consonant with our mission.</p>
+</section>
+
+<!-- CTA -->
+<section class="mt-8 rounded-2xl border border-[#d4c8b5] bg-[#e9e2d6] p-6 md:flex md:items-center md:justify-between">
+  <div>
+    <h4 class="font-serif text-lg">See the work. Join the work.</h4>
+    <p class="text-neutral-700 mt-1">Explore active projects or reach out—we’d love to connect.</p>
   </div>
-  <div class="rounded-2xl border border-[#d4c8b5] bg-white p-6">
-    <h3 class="font-serif text-xl">Redemptive Technology</h3>
-    <p class="mt-2 text-neutral-700">We reframe technology as a servant, not a master—redeeming time for families and educators through thoughtful tools and classical principles.</p>
+  <div class="mt-4 md:mt-0 flex gap-2">
+    <a href="{{ url_for('projects') }}" class="px-5 py-2 rounded-lg border border-[#d4c8b5] bg-white hover:bg-[#fffefd] transition font-serif">Projects</a>
+    <a href="{{ url_for('contact') }}" class="px-5 py-2 rounded-lg border border-[#b8a88b] bg-[#f4ead8] hover:bg-[#efe0c7] transition font-serif">Contact Us</a>
   </div>
-  <div class="rounded-2xl border border-[#d4c8b5] bg-white p-6">
-    <h3 class="font-serif text-xl">Impact in Practice</h3>
-    <p class="mt-2 text-neutral-700">From curriculum pilots to teacher support and student scholarships, we channel generosity into tangible programs that change lives.</p>
-  </div>
-</div>
+</section>
+
 {% endblock %}
+

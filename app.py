@@ -19,7 +19,7 @@ ORG_NAME = "Providence Foundation"
 ORG_EMAIL = "info@providencefoundation.org"   # TODO: replace
 MAILING = {
     "line1": "Providence Foundation",
-    "line2": "1234 Classic Ave.",
+    "line2": "8731 S Delaware Place.",
     "city": "Tulsa",
     "state": "OK",
     "zip": "74137",
@@ -99,23 +99,23 @@ def projects():
 @app.route("/team")
 def team():
     bios = [
-        {"name": "FIRST LAST", "role": "Founder & Executive Director",
-         "bio": "One to three sentences on vocation, track record, and calling to this work.",
+        {"name": "SHARON BENITEZ COLLINS", "role": "Founder & Executive Director",
+         "bio": "6th generation missionary. Mother of four (so far...!) Educator and language teacher.",
          "img": "headshots/founder.jpg"},
-        {"name": "FIRST LAST", "role": "Board Chair",
-         "bio": "Brief background, professional expertise, and alignment with the mission.",
+        {"name": "RUTH ANGELICA MARTINEZ OST", "role": "Board Chair",
+         "bio": "5th generation missionary. Founder of CENG (Christian school) in Nicagua.",
          "img": "headshots/chair.jpg"},
-        {"name": "FIRST LAST", "role": "Treasurer",
+        {"name": "DEBORAH COLLINS", "role": "Treasurer",
          "bio": "Financial stewardship experience and commitment to transparency.",
          "img": "headshots/treasurer.jpg"},
-        {"name": "FIRST LAST", "role": "Secretary",
+        {"name": "LEVI STATE", "role": "Secretary",
          "bio": "Governance, administration, and documentation support.",
          "img": "headshots/secretary.jpg"},
-        {"name": "FIRST LAST", "role": "Advisor",
+        {"name": "VICTOR JABES MARTINEZ OST", "role": "Director",
          "bio": "Counsel in education/theology/technology/philanthropy, etc.",
          "img": "headshots/advisor.jpg"},
-        {"name": "FIRST LAST", "role": "Advisor",
-         "bio": "Area of counsel and brief experience.",
+        {"name": "JESSE COLLINS", "role": "Director & Advisor",
+         "bio": "Business and administration advisor.",
          "img": "headshots/advisor2.jpg"},
     ]
     return render_template("team.html", bios=bios)
